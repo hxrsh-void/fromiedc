@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>To-do list</title>
+<meta name="description" content="A simple to-do list. Add tasks, tick them off, and filter open or done. Saved on this device.">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="card">
+  <header class="header">
+    <div class="header-row">
+      <h1 class="title">To-do list</h1>
+      <span class="fact" id="fact" hidden></span>
+    </div>
+    <p class="intro">Add what you need to do and tick it off when it's done. The list is saved on this device.</p>
+  </header>
+
+  <figure class="hero">
+    <img src="./hero.jpg" alt="Illustration of a notepad with ticked tasks">
+    <figcaption class="caption">Illustration.</figcaption>
+  </figure>
+
+  <section class="group" aria-labelledby="add-label">
+    <h2 class="group-label" id="add-label">Add a task</h2>
+    <form class="todo-add" id="add-form" autocomplete="off">
+      <label class="field">
+        <span class="field-label">New task</span>
+        <input type="text" id="new-task" name="new-task" autocomplete="off">
+      </label>
+      <button type="submit" class="btn btn-primary" id="add-btn" disabled>Add</button>
+    </form>
+  </section>
+
+  <section class="group" aria-labelledby="tasks-label">
+    <h2 class="group-heading" id="tasks-label">Your tasks</h2>
+    <div class="choice-row" id="filter-row" hidden>
+      <span class="field-label">Show</span>
+      <div class="choices" role="radiogroup" aria-label="Show">
+        <button type="button" class="choice" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="choice" data-filter="open" aria-pressed="false">Open</button>
+        <button type="button" class="choice" data-filter="done" aria-pressed="false">Done</button>
+      </div>
+    </div>
+    <p class="empty" id="empty-all" hidden>Nothing here yet. Add your first task above.</p>
+    <p class="empty" id="empty-open" hidden>Everything is done. Nothing open.</p>
+    <p class="empty" id="empty-done" hidden>Nothing done yet.</p>
+    <ul class="todo-list" id="todo-list"></ul>
+    <div class="todo-summary" id="summary" hidden>
+      <span class="caption" id="summary-text"></span>
+      <button type="button" class="btn btn-secondary btn-compact" id="clear-done" hidden>Clear done</button>
+    </div>
+  </section>
+
+  <footer class="closing">Saved on this device only. Nothing is sent anywhere.</footer>
+</main>
+<script src="./app.js"></script>
+</body>
+</html>
